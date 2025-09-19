@@ -25,6 +25,14 @@ public class Main {
             choice = scanner.nextInt();
             scanner.nextLine();
 
+
+            if (choice < 1 || choice > 3 ) {
+                System.out.println("*******************");
+                System.out.println("Invalid choice please enter a number between 1 and 3.");
+                System.out.println("*******************");
+                continue;
+            }
+
             switch (choice)
             {
                 case 1:

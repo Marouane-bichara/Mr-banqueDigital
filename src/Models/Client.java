@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Client extends Personne{
     public int idClient;
-    private HashMap<String, Compte> comptes;
+    private HashMap<String,Compte > comptes;
 
     public Client(String nom, String prenom, String email, String motDePass, int idClient, HashMap<String, Compte> comptes) {
         super(nom, prenom, email, motDePass);
@@ -12,11 +12,14 @@ public class Client extends Personne{
         this.comptes = comptes;
     }
 
+
+
+
     public int getIdClient() {
         return idClient;
     }
 
-    public HashMap<String, Compte> getComptes() {
+    public  HashMap<String, Compte> getComptes() {
         return comptes;
     }
 
@@ -26,5 +29,21 @@ public class Client extends Personne{
 
     public void setComptes(HashMap<String, Compte> comptes) {
         this.comptes = comptes;
+    }
+
+
+
+
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "idClient=" + idClient +
+                ", nom='" + getNom() + '\'' +
+                ", prenom='" + getPrenom() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", motDePasse='" + getMotDePass() + '\'' +
+                ", comptes=" + comptes +
+                '}';
     }
 }
