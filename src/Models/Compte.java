@@ -8,14 +8,12 @@ public class Compte {
     public double Sold;
     public String typeCompte;
     private HashSet<Transaction> historiqueTransactions;
-    public Client client;
 
-    public Compte(long numeroCompte, double sold, String typeCompte, HashSet<Transaction> historiqueTransactions, Client client) {
+    public Compte(long numeroCompte, double sold, String typeCompte, HashSet<Transaction> historiqueTransactions) {
         this.numeroCompte = numeroCompte;
         Sold = sold;
         this.typeCompte = typeCompte;
         this.historiqueTransactions = historiqueTransactions;
-        this.client = client;
     }
 
     public long getNumeroCompte() {
@@ -34,9 +32,7 @@ public class Compte {
         return historiqueTransactions;
     }
 
-    public Client getClient() {
-        return client;
-    }
+
 
     public void setNumeroCompte(long numeroCompte) {
         this.numeroCompte = numeroCompte;
@@ -54,7 +50,17 @@ public class Compte {
         this.typeCompte = typeCompte;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+
+
+
+    @Override
+    public String toString() {
+        return "Compte{" +
+                "numeroCompte='" + numeroCompte + '\'' +
+                ", solde=" + Sold +
+                ", typeCompte='" + typeCompte + '\'' +
+                ", transactionHistory=" + historiqueTransactions +  // will call Transaction.toString()
+                '}';
     }
+
 }
